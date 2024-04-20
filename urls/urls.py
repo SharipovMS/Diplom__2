@@ -1,15 +1,17 @@
 class Urls:
 
-    create_user = 'https://stellarburgers.nomoreparties.site/api/auth/register'
+    product_url = 'https://stellarburgers.nomoreparties.site'
 
-    user_login = 'https://stellarburgers.nomoreparties.site/api/auth/login'
+    create_user = product_url + '/api/auth/register'
 
-    user_logout = 'https://stellarburgers.nomoreparties.site/api/auth/logout'
+    user_login = product_url + '/api/auth/register'
 
-    update_user = 'https://stellarburgers.nomoreparties.site/api/auth/user'
+    user_logout = product_url + '/api/auth/logout'
 
-    order = 'https://stellarburgers.nomoreparties.site/api/orders'
+    update_user = product_url + '/api/auth/user'
 
-    ingridient = 'https://stellarburgers.nomoreparties.site/api/ingredients'
+    order = product_url + '/api/orders'
 
-    get_orders = 'https://stellarburgers.nomoreparties.site/api/orders'
+    ingridient = product_url + '/api/ingredients'
+
+    get_orders = product_url + '/api/orders'

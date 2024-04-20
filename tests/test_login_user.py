@@ -12,9 +12,14 @@ class TestLoginUser:
         req_login_user_seccess = requests.post(Urls.user_login, data=DataForTest.static_user)
         assert req_login_user_seccess.status_code == 200 and req_login_user_seccess.json()['success'] == True
 
-    @allure.title('Логин пользователя в системе с ошибкой при заполнении полей')
+    @allure.title('Логин пользователя в системе с ошибкой при заполнении поля еmail')
     @allure.description('Проверка статус кода и ответа в формате JSON')
-    def test_incorrect_field(self):
-        req_login_user_incorrect_field = requests.post(Urls.user_login, data=DataForTest.incorrect_user)
+    def test_incorrect_email_field(self):
+        req_login_user_incorrect_field = requests.post(Urls.user_login, data=DataForTest.incorrect_email)
         assert req_login_user_incorrect_field.status_code == 401 and req_login_user_incorrect_field.json()['message'] == 'email or password are incorrect'
 
+    @allure.title('Логин пользователя в системе с ошибкой при заполнении поля password')
+    @allure.description('Проверка статус кода и ответа в формате JSON')
+    def test_incorrect_password_field(self):
+        req_login_user_incorrect_field = requests.post(Urls.user_login, data=DataForTest.incorrect_password)
+        assert req_login_user_incorrect_field.status_code == 401 and req_login_user_incorrect_field.json()['message'] == 'email or password are incorrect'
